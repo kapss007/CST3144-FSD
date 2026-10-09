@@ -1,11 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CST3144 - Lessons Booking</title>
 </head>
+
 <body>
-    
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <p>{{ description }}</p>
+
+        <button @click="changeMessage">
+            Click Me
+        </button>
+    </div>
+
+    <!-- Load Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    message: "Welcome to Lessons Booking!",
+                    description: "My first Vue.js website."
+                };
+            },
+
+            methods: {
+                changeMessage() {
+                    this.message = "Vue is working!";
+                }
+            }
+        }).mount("#app");
+    </script>
 </body>
 </html>
